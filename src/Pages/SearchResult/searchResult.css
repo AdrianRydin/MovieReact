@@ -1,0 +1,35 @@
+.search-result-container {
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  justify-content: center;
+}
+
+.movie-result {
+  width: 400px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border: 1px solid red;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+.movie-result img {
+  width: auto;
+  height: 300px;
+  object-fit: contain;
+}
+.movie-result h1 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #fff;
+}
+.movie-result p {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #fff;
+}

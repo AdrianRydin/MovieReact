@@ -4,7 +4,7 @@ import Header from "./components/Header/Header";
 import MovieList from "./components/MovieList/MovieList";
 import Caroussel from "./components/Caroussel/Caroussel";
 import SearchResult from "./Pages/SearchResult/SearchResult";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 function HomePage() {
   return (
@@ -16,6 +16,8 @@ function HomePage() {
 }
 
 function App() {
+  const [movies, setMovies] = useState(null);
+
   useEffect(() => {
     // Fetch API
   }, []);
@@ -24,10 +26,12 @@ function App() {
     <section className="app-wrapper">
       <Router>
         <Header />
-
         <Routes>
           <Route path="/" element={HomePage} />
-          <Route path="/search/:title" element={SearchResult} />
+          <Route
+            path="/search"
+            element={<SearchResult movies={movies} setMovies={setMovies} />}
+          />
         </Routes>
       </Router>
     </section>
