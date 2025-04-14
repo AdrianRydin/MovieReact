@@ -8,7 +8,7 @@ import { useEffect } from "react";
 import MovieDetails from "./Pages/MovieDetails/MovieDetails";
 
 function HomePage() {
-  return (
+  return(
     <>
       <Caroussel />
       <MovieList />
@@ -25,7 +25,6 @@ function App() {
     <section className="app-wrapper">
       <Router>
         <Header />
-
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/search/:title" element={<SearchResult />} />
