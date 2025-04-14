@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import "./searchResult.css";
 import { useLocation } from "react-router-dom";
+import MovieCard from "../../components/MovieCard/MovieCard";
 
 function useQuery() {
   return new URLSearchParams(useLocation().search);
@@ -19,7 +20,9 @@ function SearchResult({ movies, setMovies }) {
 
   return (
     <div className="search-result-container">
-      {movies && movies.length > 0
+      <MovieCard />
+
+      {/* {movies && movies.length > 0
         ? movies.map((movie) => (
             <div key={movie.imdbID} className="movie-result">
               <h3>{movie.Title}</h3>
@@ -27,7 +30,7 @@ function SearchResult({ movies, setMovies }) {
               <img src={movie.Poster} alt={`${movie.Title} Poster`} />
             </div>
           ))
-        : queryParam && <p>No results found.</p>}
+        : queryParam && <p>No results found.</p>} */}
     </div>
   );
 }
