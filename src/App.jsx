@@ -7,7 +7,7 @@ import SearchResult from "./Pages/SearchResult/SearchResult";
 import { useEffect } from "react";
 
 function HomePage() {
-  return (
+  return(
     <>
       <Caroussel />
       <MovieList />
@@ -24,9 +24,8 @@ function App() {
     <section className="app-wrapper">
       <Router>
         <Header />
-
         <Routes>
-          <Route path="/" element={HomePage} />
+          <Route path="/" element={<HomePage />} />
           <Route path="/search/:title" element={SearchResult} />
         </Routes>
       </Router>
