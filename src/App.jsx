@@ -5,6 +5,7 @@ import MovieList from "./components/MovieList/MovieList";
 import Caroussel from "./components/Caroussel/Caroussel";
 import SearchResult from "./Pages/SearchResult/SearchResult";
 import { useEffect } from "react";
+import MovieDetails from "./Pages/MovieDetails/MovieDetails";
 
 function HomePage() {
   return(
@@ -26,7 +27,8 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/search/:title" element={SearchResult} />
+          <Route path="/search/:title" element={<SearchResult />} />
+          <Route path="/movie/:id" element={<MovieDetails />} />
         </Routes>
       </Router>
     </section>
