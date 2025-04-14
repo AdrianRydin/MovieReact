@@ -29,7 +29,7 @@ function App() {
       <Router>
         <Header />
         <Routes>
-          <Route path="/" element={HomePage} />
+          <Route path="/" element={<HomePage />} />
           <Route
             path="/search"
             element={<SearchResult movies={movies} setMovies={setMovies} />}
