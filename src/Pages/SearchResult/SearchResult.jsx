@@ -21,7 +21,7 @@ function SearchResult({ movies, setMovies }) {
   return (
     <div className="search-result-container">
       {movies && movies.length > 0
-        ? movies.map((movie) => <MovieCard key={movie.imdbID} movie={movie} />)
+        ? movies.map((movie) => <MovieCard key={movie.imdbID} movie={movie} onFavoriteToggle={() => {}}/>)
         : queryParam && <p>No results found.</p>}
     </div>
   );

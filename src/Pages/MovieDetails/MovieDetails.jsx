@@ -1,18 +1,37 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./movieDetails.css";
+import starEmpty from "../../assets/starempty.svg";
+import starFilled from "../../assets/starfilled.svg";
 
 function MovieDetails() {
   const { id } = useParams();
   const [movie, setMovie] = useState(null);
+  const [isFavorite, setIsFavorite] = useState(false);
 
   useEffect(() => {
     fetch(`http://www.omdbapi.com/?apikey=f4578ae6&plot=full&i=${id}`)
       .then((res) => res.json())
       .then((data) => {
         setMovie(data);
+        const saved = JSON.parse(localStorage.getItem("watchlist")) || [];
+        const found = saved.find((fav) => fav.imdbID === data.imdbID);
+        setIsFavorite(!!found);
       });
   }, [id]);
+  const toggleFavorite = () => {
+    const saved = JSON.parse(localStorage.getItem("watchlist")) || [];
+    let updated;
+
+    if (isFavorite) {
+      updated = saved.filter((fav) => fav.imdbID !== movie.imdbID);
+    } else {
+      updated = [...saved, movie];
+    }
+
+    localStorage.setItem("watchlist", JSON.stringify(updated));
+    setIsFavorite(!isFavorite);
+  };
 
   if (!movie) return <p>Laddar...</p>;
 
@@ -22,11 +41,10 @@ function MovieDetails() {
         <div className="movie-info__title">
           <h2>{movie.Title}</h2>
         </div>
-        <div className="movie-info__fav" id={movie.imdbID}>
+        <div className="movie-info__fav"  onClick={toggleFavorite}>
           <img
-            src="../src/assets/starempty.svg"
-            id="favIcon"
-            alt="favorite-star-empty"
+            src={isFavorite ? starFilled : starEmpty}
+            alt="favorite-toggle"
           />
         </div>
       </div>

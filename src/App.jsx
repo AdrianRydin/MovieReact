@@ -7,6 +7,7 @@ import SearchResult from "./Pages/SearchResult/SearchResult";
 
 import { useEffect, useState } from "react";
 import MovieDetails from "./Pages/MovieDetails/MovieDetails";
+import Watchlist from "./Pages/WatchList/WatchList";
 
 function HomePage() {
   return (
@@ -35,6 +36,7 @@ function App() {
             element={<SearchResult movies={movies} setMovies={setMovies} />}
           />
           <Route path="/movie/:id" element={<MovieDetails />} />
+          <Route path="/watchlist" element={<Watchlist />} />
         </Routes>
       </Router>
     </section>
