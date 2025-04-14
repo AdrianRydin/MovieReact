@@ -9,7 +9,8 @@ function Caroussel() {
     const fetchTrailers = async () => {
       const res = await fetch('https://santosnr6.github.io/Data/favoritemovies.json');
       const data = await res.json();
-      setTrailers(data.slice(0, 5));
+      const shuffled = [...data].sort(() => Math.random() - 0.5); 
+      setTrailers(shuffled.slice(0, 5));
     };
     fetchTrailers();
   }, []);
