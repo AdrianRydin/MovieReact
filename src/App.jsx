@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 import MovieDetails from "./Pages/MovieDetails/MovieDetails";
 
 function HomePage() {
-  return(
+  return (
     <>
       <Caroussel />
       <MovieList />
@@ -29,7 +29,7 @@ function App() {
       <Router>
         <Header />
         <Routes>
-          <Route path="/" element={HomePage} />
+          <Route path="/" element={<HomePage />} />
           <Route
             path="/search"
             element={<SearchResult movies={movies} setMovies={setMovies} />}
