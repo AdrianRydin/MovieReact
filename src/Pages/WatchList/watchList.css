@@ -1,0 +1,19 @@
+.watchlist-wrapper {
+    padding: 2em 1em;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: white;
+  }
+  
+  .watchlist-wrapper h2 {
+    text-align: center;
+    margin-bottom: 1em;
+  }
+  
+  .movie-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2em;
+  }
+  
