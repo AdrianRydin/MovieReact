@@ -52,3 +52,7 @@
   font-size: 1em;
   text-align: center;
 }
+.link-container {
+  text-decoration: none;
+  color: inherit;
+}
