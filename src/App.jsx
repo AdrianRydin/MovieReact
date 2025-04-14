@@ -4,10 +4,12 @@ import Header from "./components/Header/Header";
 import MovieList from "./components/MovieList/MovieList";
 import Caroussel from "./components/Caroussel/Caroussel";
 import SearchResult from "./Pages/SearchResult/SearchResult";
+
 import { useEffect, useState } from "react";
+import MovieDetails from "./Pages/MovieDetails/MovieDetails";
 
 function HomePage() {
-  return (
+  return(
     <>
       <Caroussel />
       <MovieList />
@@ -32,6 +34,7 @@ function App() {
             path="/search"
             element={<SearchResult movies={movies} setMovies={setMovies} />}
           />
+          <Route path="/movie/:id" element={<MovieDetails />} />
         </Routes>
       </Router>
     </section>
