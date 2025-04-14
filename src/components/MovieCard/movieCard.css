@@ -2,12 +2,11 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 2em;
+  gap: 2rem;
   margin-top: 2em;
 }
 
 .movie-card {
-  height: 25.5em;
   width: 15em;
   display: flex;
   flex-direction: column;

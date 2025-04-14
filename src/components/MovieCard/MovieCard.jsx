@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./movieCard.css";
 import starEmpty from "../../assets/starempty.svg";
 import starFilled from "../../assets/starfilled.svg";
 
 function MovieCard({ movie, onFavoriteToggle }) {
-  const navigate = useNavigate();
   const [isFavorite, setIsFavorite] = useState(false);
 
-useEffect(() => {
+  useEffect(() => {
     const saved = JSON.parse(localStorage.getItem("watchlist")) || [];
     const found = saved.find((fav) => fav.imdbID === movie.imdbID);
     setIsFavorite(!!found);
@@ -29,17 +28,10 @@ useEffect(() => {
     if (onFavoriteToggle) onFavoriteToggle();
   };
 
-  const handleClick = () => {
-    navigate(`/movie/${movie.imdbID}`);
-  };
-
-return (
+  return (
     <div className="movie-card">
       <div className="movie-favorite" onClick={toggleFavorite}>
-        <img
-          src={isFavorite ? starFilled : starEmpty}
-          alt="favorite-toggle"
-        />
+        <img src={isFavorite ? starFilled : starEmpty} alt="favorite-toggle" />
       </div>
       <Link to={`/movie/${movie.imdbID}`} className="link-container">
         <img
