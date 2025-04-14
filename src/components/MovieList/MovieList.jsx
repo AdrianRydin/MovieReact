@@ -29,9 +29,9 @@ if (loading) return <p>Loading movies...</p>;
 if (error) return <p>Error: {error}</p>;
 
 return (
-  <div className="movie-list">
+  <section className="movie-list">
       {movies.map(movie => (
-          <div key={movie.imdbID} className="movie-card">
+          <article key={movie.imdbID} className="movie-card">
               <h2>{movie.Title}</h2>
               <img src={movie.Poster} alt={`Poster for ${movie.Title}`} />
               <div>
@@ -45,9 +45,9 @@ return (
                       allowFullScreen
                   ></iframe>
               </div>
-          </div>
+          </article>
       ))}
-  </div>
+  </section>
 );
 }
 
