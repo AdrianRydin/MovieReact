@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 import MovieDetails from "./Pages/MovieDetails/MovieDetails";
 
 function HomePage() {
-  return(
+  return (
     <>
       <Caroussel />
       <MovieList />

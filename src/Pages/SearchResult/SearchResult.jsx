@@ -20,17 +20,9 @@ function SearchResult({ movies, setMovies }) {
 
   return (
     <div className="search-result-container">
-      <MovieCard />
-
-      {/* {movies && movies.length > 0
-        ? movies.map((movie) => (
-            <div key={movie.imdbID} className="movie-result">
-              <h3>{movie.Title}</h3>
-              <p>{movie.Year}</p>
-              <img src={movie.Poster} alt={`${movie.Title} Poster`} />
-            </div>
-          ))
-        : queryParam && <p>No results found.</p>} */}
+      {movies && movies.length > 0
+        ? movies.map((movie) => <MovieCard key={movie.imdbID} movie={movie} />)
+        : queryParam && <p>No results found.</p>}
     </div>
   );
 }
