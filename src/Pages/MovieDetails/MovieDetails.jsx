@@ -50,7 +50,7 @@ function MovieDetails() {
       </section>
       <article className="movie-info__about">
         <section className="movie-info__poster">
-          <img src={movie.Poster} alt={movie.Title} />
+          <img src={movie.Poster} alt={`Poster of ${movie.Title}`} />
         </section>
         <section className="movie-info__details">
           <section className="movie-info__misc">
