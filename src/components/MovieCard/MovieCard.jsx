@@ -3,9 +3,15 @@ import { Link } from "react-router-dom";
 import "./movieCard.css";
 import starEmpty from "../../assets/starempty.svg";
 import starFilled from "../../assets/starfilled.svg";
+import missingPoster from "../../assets/icons/missing-poster.svg";
 
 function MovieCard({ movie, onFavoriteToggle }) {
   const [isFavorite, setIsFavorite] = useState(false);
+
+  const handleImgError = (e) => {
+    e.target.onerror = null;
+    e.target.src = missingPoster;
+  };
 
   useEffect(() => {
     const saved = JSON.parse(localStorage.getItem("watchlist")) || [];
@@ -38,6 +44,7 @@ function MovieCard({ movie, onFavoriteToggle }) {
           alt={`Poster of ${movie.Poster}`}
           className="movie-poster"
           src={movie.Poster}
+          onError={handleImgError}
         ></img>
         <p id={movie.imdbID} className="movie-title">
           {movie.Title}
