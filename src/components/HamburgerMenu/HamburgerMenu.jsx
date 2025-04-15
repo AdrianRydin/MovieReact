@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./hamburgermenu.css";
-import "@fortawesome/fontawesome-free/css/all.min.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
 function HamburgerMenu() {
@@ -18,7 +19,7 @@ function HamburgerMenu() {
           onClick={toggleMenu}
           aria-label="Open menu"
         >
-          <i className="fa-solid fa-bars"></i>
+          <FontAwesomeIcon icon={faBars} />
         </button>
       )}
 
@@ -28,7 +29,7 @@ function HamburgerMenu() {
           onClick={closeMenu}
           aria-label="Close menu"
         >
-          <i className="fa-solid fa-xmark"></i>
+          <FontAwesomeIcon icon={faXmark} />
         </button>
         <nav className="hamburger-nav">
           <Link to="/" onClick={closeMenu}>

@@ -35,7 +35,7 @@ function MovieCard({ movie, onFavoriteToggle }) {
       </div>
       <Link to={`/movie/${movie.imdbID}`} className="link-container">
         <img
-          alt={movie.Title}
+          alt={`Poster of ${movie.Poster}`}
           className="movie-poster"
           src={movie.Poster}
         ></img>
