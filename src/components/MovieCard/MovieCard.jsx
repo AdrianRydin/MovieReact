@@ -35,10 +35,10 @@ function MovieCard({ movie, onFavoriteToggle }) {
   };
 
   return (
-    <div className="movie-card">
-      <div className="movie-favorite" onClick={toggleFavorite}>
+    <article className="movie-card">
+      <aside className="movie-favorite" onClick={toggleFavorite}>
         <img src={isFavorite ? starFilled : starEmpty} alt="favorite-toggle" />
-      </div>
+      </aside>
       <Link to={`/movie/${movie.imdbID}`} className="link-container">
         <img
           alt={`Poster of ${movie.Poster}`}
@@ -50,7 +50,7 @@ function MovieCard({ movie, onFavoriteToggle }) {
           {movie.Title}
         </p>
       </Link>
-    </div>
+    </article>
   );
 }
 

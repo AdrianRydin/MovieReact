@@ -16,7 +16,7 @@ function Header() {
   };
   return (
     <header className="header">
-      <div className="content-wrapper header__flex">
+      <section className="content-wrapper header__flex">
         <Link to="/">
           <img
             className="header__logo"
@@ -41,7 +41,7 @@ function Header() {
           Watchlist
         </Link>
         <HamburgerMenu />
-      </div>
+      </section>
     </header>
   );
 }

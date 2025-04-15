@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 import "./movieList.css";
-import MovieCard from '../MovieCard/MovieCard';
+import MovieCard from "../MovieCard/MovieCard";
 
 function MovieList() {
   //Made an array to hold the movies
@@ -11,7 +11,10 @@ function MovieList() {
   useEffect(() => {
     fetch("https://santosnr6.github.io/Data/favoritemovies.json")
       .then((res) => {
-        if (!res.ok) throw new Error("Failed to fetch movies, you should be ashamed of yourself");
+        if (!res.ok)
+          throw new Error(
+            "Failed to fetch movies, you should be ashamed of yourself"
+          );
         return res.json();
       })
       .then((data) => {
@@ -30,9 +33,9 @@ function MovieList() {
   return (
     <section className="movie-list">
       {movies.map((movie) => (
-        <div key={movie.imdbID} className="movie-list-item">
+        <section key={movie.imdbID} className="movie-list-item">
           <MovieCard movie={movie} />
-        </div>
+        </section>
       ))}
     </section>
   );

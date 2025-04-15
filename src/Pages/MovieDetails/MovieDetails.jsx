@@ -37,23 +37,23 @@ function MovieDetails() {
 
   return (
     <article className="movie-info">
-      <div className="movie-info__head">
-        <div className="movie-info__title">
+      <section className="movie-info__head">
+        <aside className="movie-info__title">
           <h2>{movie.Title}</h2>
-        </div>
-        <div className="movie-info__fav"  onClick={toggleFavorite}>
+        </aside>
+        <aside className="movie-info__fav" onClick={toggleFavorite}>
           <img
             src={isFavorite ? starFilled : starEmpty}
             alt="favorite-toggle"
           />
-        </div>
-      </div>
+        </aside>
+      </section>
       <article className="movie-info__about">
-        <div className="movie-info__poster">
-          <img src={movie.Poster} alt={movie.Title} />
-        </div>
-        <div className="movie-info__details">
-          <div className="movie-info__misc">
+        <section className="movie-info__poster">
+          <img src={movie.Poster} alt={`Poster of ${movie.Title}`} />
+        </section>
+        <section className="movie-info__details">
+          <section className="movie-info__misc">
             <p>
               <strong>IMDb Rated:</strong> {movie.Rated}
             </p>
@@ -69,32 +69,32 @@ function MovieDetails() {
             <p>
               <strong>IMDb Rating:</strong> {movie.imdbRating}
             </p>
-          </div>
-          <div className="movie-info__plot">
+          </section>
+          <section className="movie-info__plot">
             <h3>Plot</h3>
             <p>{movie.Plot}</p>
-          </div>
-          <div className="movie-info__people">
-            <div className="movie-info__director">
+          </section>
+          <section className="movie-info__people">
+            <aside className="movie-info__director">
               <p>
                 <strong>Director:</strong>
               </p>
               <p>{movie.Director}</p>
-            </div>
-            <div className="movie-info__writer">
+            </aside>
+            <aside className="movie-info__writer">
               <p>
                 <strong>Writer:</strong>
               </p>
               <p>{movie.Writer}</p>
-            </div>
-            <div className="movie-info__actors">
+            </aside>
+            <aside className="movie-info__actors">
               <p>
                 <strong>Actors:</strong>
               </p>
               <p>{movie.Actors}</p>
-            </div>
-          </div>
-        </div>
+            </aside>
+          </section>
+        </section>
       </article>
     </article>
   );

@@ -19,11 +19,17 @@ function SearchResult({ movies, setMovies }) {
   }, [queryParam, setMovies]);
 
   return (
-    <div className="search-result-container">
+    <section className="search-result-container">
       {movies && movies.length > 0
-        ? movies.map((movie) => <MovieCard key={movie.imdbID} movie={movie} onFavoriteToggle={() => {}}/>)
+        ? movies.map((movie) => (
+            <MovieCard
+              key={movie.imdbID}
+              movie={movie}
+              onFavoriteToggle={() => {}}
+            />
+          ))
         : queryParam && <p>No results found.</p>}
-    </div>
+    </section>
   );
 }
 
