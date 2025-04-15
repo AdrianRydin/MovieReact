@@ -23,7 +23,7 @@ function HamburgerMenu() {
         </button>
       )}
 
-      <div className={`hamburger-overlay ${isOpen ? "open" : ""}`}>
+      <section className={`hamburger-overlay ${isOpen ? "open" : ""}`}>
         <button
           className="close-button"
           onClick={closeMenu}
@@ -39,7 +39,7 @@ function HamburgerMenu() {
             Watch List
           </Link>
         </nav>
-      </div>
+      </section>
     </>
   );
 }

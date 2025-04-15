@@ -19,11 +19,15 @@ function WatchList() {
       {watchlist.length === 0 ? (
         <p>Inga filmer tillagda ännu.</p>
       ) : (
-        <div className="movie-grid">
+        <section className="movie-grid">
           {watchlist.map((movie) => (
-            <MovieCard key={movie.imdbID} movie={movie} onFavoriteToggle={fetchWatchlist} />
+            <MovieCard
+              key={movie.imdbID}
+              movie={movie}
+              onFavoriteToggle={fetchWatchlist}
+            />
           ))}
-        </div>
+        </section>
       )}
     </section>
   );
