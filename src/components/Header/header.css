@@ -60,7 +60,7 @@
     align-items: center;
   }
   .header__form {
-    width: 50%;
+    width: 48%;
   }
   .header__input {
     width: 100%;
@@ -72,6 +72,6 @@
     width: 90px;
   }
   .header__form-btn{
-    font-size: 10px;
+    font-size: 9px;
   }
 }
