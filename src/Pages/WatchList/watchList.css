@@ -16,4 +16,20 @@
     justify-content: center;
     gap: 2em;
   }
+
+  .header__watchlist {
+    display: flex;
+    align-items: center;
+    gap: 0.1em;
+  }
   
+  .watchlist-count {
+    background-color: #f5c518;
+    color: black;
+    font-weight: bold;
+    border-radius: 999px;
+    padding: 0.2em 0.6em;
+    font-size: 0.8em;
+    margin-left: 0.5em;
+    vertical-align: middle;
+  }

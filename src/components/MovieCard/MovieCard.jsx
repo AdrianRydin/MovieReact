@@ -32,6 +32,7 @@ function MovieCard({ movie, onFavoriteToggle }) {
     localStorage.setItem("watchlist", JSON.stringify(updated));
     setIsFavorite(!isFavorite);
     if (onFavoriteToggle) onFavoriteToggle();
+    window.dispatchEvent(new Event("watchlist-updated"));
   };
 
   return (

@@ -47,7 +47,7 @@
   font-size: 1.5rem;
   color: #f5c518;
   text-decoration: none;
-  margin-right: 3rem;
+  margin-right: 1rem;
 }
 
 @media screen and (max-width: 600px) {
@@ -73,5 +73,9 @@
   }
   .header__form-btn{
     font-size: 9px;
+  }
+  .desktop-only,
+  .watchlist-count {
+    display: none;
   }
 }

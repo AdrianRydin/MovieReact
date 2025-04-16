@@ -31,6 +31,7 @@ function MovieDetails() {
 
     localStorage.setItem("watchlist", JSON.stringify(updated));
     setIsFavorite(!isFavorite);
+    window.dispatchEvent(new Event("watchlist-updated"));
   };
 
   if (!movie) return <p>Laddar...</p>;
