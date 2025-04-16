@@ -57,9 +57,10 @@
   }
   .header__flex {
     justify-content: space-between;
+    align-items: center;
   }
   .header__form {
-    width: auto;
+    width: 50%;
   }
   .header__input {
     width: 100%;
@@ -68,6 +69,9 @@
     display: none;
   }
   .header__logo {
-    display: none;
+    width: 90px;
+  }
+  .header__form-btn{
+    font-size: 10px;
   }
 }
