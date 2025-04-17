@@ -5,7 +5,7 @@ import MovieList from "./components/MovieList/MovieList";
 import Caroussel from "./components/Caroussel/Caroussel";
 import SearchResult from "./Pages/SearchResult/SearchResult";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import MovieDetails from "./Pages/MovieDetails/MovieDetails";
 import Watchlist from "./Pages/WatchList/WatchList";
 
@@ -20,10 +20,6 @@ function HomePage() {
 
 function App() {
   const [movies, setMovies] = useState(null);
-
-  useEffect(() => {
-    // Fetch API
-  }, []);
 
   return (
     <section className="app-wrapper">

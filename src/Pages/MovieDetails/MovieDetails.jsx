@@ -17,7 +17,8 @@ function MovieDetails() {
         const saved = JSON.parse(localStorage.getItem("watchlist")) || [];
         const found = saved.find((fav) => fav.imdbID === data.imdbID);
         setIsFavorite(!!found);
-      });
+      })
+      .catch((error) => console.error("API error: ", error));
   }, [id]);
   const toggleFavorite = () => {
     const saved = JSON.parse(localStorage.getItem("watchlist")) || [];
